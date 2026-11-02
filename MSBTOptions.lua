@@ -1714,7 +1714,8 @@ function MikSBTOpt.InitEvents()
  index = 36;	evtData[index].EventType = "MSBT_EVENTTYPE_OUTGOING_PET_SPELL_RESIST";
  index = 37;	evtData[index].EventType = "MSBT_EVENTTYPE_OUTGOING_PET_SPELL_ABSORB";
  index = 38;	evtData[index].EventType = "MSBT_EVENTTYPE_OUTGOING_PET_SPELL_IMMUNE";
- index = 39;	evtData[index].EventType = "MSBT_EVENTTYPE_OUTGOING_PET_SPELL_EVADE";
+ index = 39;	evtData[index].EventType = "MSBT_EVENTTYPE_OUTGOING_PET_SPELL_REFLECT";
+ index = 40;	evtData[index].EventType = "MSBT_EVENTTYPE_OUTGOING_PET_SPELL_EVADE";
 
 
  evtData = MikSBTOpt.NOTIFICATION_EVENTS;

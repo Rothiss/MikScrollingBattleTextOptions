@@ -271,7 +271,8 @@ MikSBTOpt.OUTGOING_EVENTS = {
  [36] = { Label="Pet Spell Resists", Tooltips={ShowCheckbox="Sets whether or not to show your pet's outgoing spell resists.", Editbox="%n - Name of the attacked unit.\n%s - Name of the spell."}},
  [37] = { Label="Pet Ability/Spell Absorbs", Tooltips={ShowCheckbox="Sets whether or not to show your pet's absorbed damage from outgoing spells and abilities.", Editbox="%n - Name of the attacked unit.\n%s - Name of the spell or ability."}},
  [38] = { Label="Pet Ability/Spell Immunes", Tooltips={ShowCheckbox="Sets whether or not to show your pet's outgoing spell and ability damage the enemy is immune to.", Editbox="%n - Name of the attacked unit.\n%s - Name of the spell or ability."}},
- [39] = { Label="Pet Ability/Spell Evades", Tooltips={ShowCheckbox="Sets whether or not to show your pet's outgoing spell and ability evades.", Editbox="%n - Name of the attacked unit.\n%s - Name of the spell or ability."}},
+ [39] = { Label="Pet Ability/Spell Reflects", Tooltips={ShowCheckbox="Sets whether or not to show your pet's outgoing spell and ability damage reflected back.", Editbox="%n - Name of the attacked unit.\n%s - Name of the spell or ability."}},
+ [40] = { Label="Pet Ability/Spell Evades", Tooltips={ShowCheckbox="Sets whether or not to show your pet's outgoing spell and ability evades.", Editbox="%n - Name of the attacked unit.\n%s - Name of the spell or ability."}},
 };
 
 MikSBTOpt.NOTIFICATION_EVENTS = {
