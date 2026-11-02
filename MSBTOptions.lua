@@ -1706,14 +1706,15 @@ function MikSBTOpt.InitEvents()
  index = 28;	evtData[index].EventType = "MSBT_EVENTTYPE_OUTGOING_PET_IMMUNE";
  index = 29;	evtData[index].EventType = "MSBT_EVENTTYPE_OUTGOING_PET_EVADE";
  index = 30;	evtData[index].EventType = "MSBT_EVENTTYPE_OUTGOING_PET_SPELL_DAMAGE";
- index = 31;	evtData[index].EventType = "MSBT_EVENTTYPE_OUTGOING_PET_SPELL_MISS";
- index = 32;	evtData[index].EventType = "MSBT_EVENTTYPE_OUTGOING_PET_SPELL_DODGE";
- index = 33;	evtData[index].EventType = "MSBT_EVENTTYPE_OUTGOING_PET_SPELL_PARRY";
- index = 34;	evtData[index].EventType = "MSBT_EVENTTYPE_OUTGOING_PET_SPELL_BLOCK";
- index = 35;	evtData[index].EventType = "MSBT_EVENTTYPE_OUTGOING_PET_SPELL_RESIST";
- index = 36;	evtData[index].EventType = "MSBT_EVENTTYPE_OUTGOING_PET_SPELL_ABSORB";
- index = 37;	evtData[index].EventType = "MSBT_EVENTTYPE_OUTGOING_PET_SPELL_IMMUNE";
- index = 38;	evtData[index].EventType = "MSBT_EVENTTYPE_OUTGOING_PET_SPELL_EVADE";
+ index = 31;	evtData[index].EventType = "MSBT_EVENTTYPE_OUTGOING_PET_SPELL_DOT";
+ index = 32;	evtData[index].EventType = "MSBT_EVENTTYPE_OUTGOING_PET_SPELL_MISS";
+ index = 33;	evtData[index].EventType = "MSBT_EVENTTYPE_OUTGOING_PET_SPELL_DODGE";
+ index = 34;	evtData[index].EventType = "MSBT_EVENTTYPE_OUTGOING_PET_SPELL_PARRY";
+ index = 35;	evtData[index].EventType = "MSBT_EVENTTYPE_OUTGOING_PET_SPELL_BLOCK";
+ index = 36;	evtData[index].EventType = "MSBT_EVENTTYPE_OUTGOING_PET_SPELL_RESIST";
+ index = 37;	evtData[index].EventType = "MSBT_EVENTTYPE_OUTGOING_PET_SPELL_ABSORB";
+ index = 38;	evtData[index].EventType = "MSBT_EVENTTYPE_OUTGOING_PET_SPELL_IMMUNE";
+ index = 39;	evtData[index].EventType = "MSBT_EVENTTYPE_OUTGOING_PET_SPELL_EVADE";
 
 
  evtData = MikSBTOpt.NOTIFICATION_EVENTS;

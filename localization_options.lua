@@ -263,14 +263,15 @@ MikSBTOpt.OUTGOING_EVENTS = {
  [28]	= { Label="Pet Melee Immunes", Tooltips={ShowCheckbox="Sets whether or not to show your pet's outgoing melee damage the enemy is immune to.", Editbox="%n - Name of the attacked unit."}},
  [29]	= { Label="Pet Melee Evades", Tooltips={ShowCheckbox="Sets whether or not to show your pet's outgoing melee evades.", Editbox="%n - Name of the attacked unit."}},
  [30]	= { Label="Pet Ability/Spell Damage", Tooltips={ShowCheckbox="Sets whether or not to show your pet's outgoing spell and ability damage.", Editbox="%a - Amount of damage done.\n%n - Name of the attacked unit.\n%s - Name of the spell or ability.\n%t - Type of damage done."}},
- [31]	= { Label="Pet Ability Misses", Tooltips={ShowCheckbox="Sets whether or not to show your pet's outgoing ability misses.", Editbox="%n - Name of the attacked unit.\n%s - Name of the ability."}},
- [32]	= { Label="Pet Ability Dodges", Tooltips={ShowCheckbox="Sets whether or not to show your pet's outgoing ability dodges.", Editbox="%n - Name of the attacked unit.\n%s - Name of the ability."}},
- [33]	= { Label="Pet Ability Parries", Tooltips={ShowCheckbox="Sets whether or not to show your pet's outgoing ability parries.", Editbox="%n - Name of the attacked unit.\n%s - Name of the ability."}},
- [34]	= { Label="Pet Ability Blocks", Tooltips={ShowCheckbox="Sets whether or not to show your pet's outgoing ability blocks.", Editbox="%n - Name of the attacked unit.\n%s - Name of the ability."}},
- [35] = { Label="Pet Spell Resists", Tooltips={ShowCheckbox="Sets whether or not to show your pet's outgoing spell resists.", Editbox="%n - Name of the attacked unit.\n%s - Name of the spell."}},
- [36] = { Label="Pet Ability/Spell Absorbs", Tooltips={ShowCheckbox="Sets whether or not to show your pet's absorbed damage from outgoing spells and abilities.", Editbox="%n - Name of the attacked unit.\n%s - Name of the spell or ability."}},
- [37] = { Label="Pet Ability/Spell Immunes", Tooltips={ShowCheckbox="Sets whether or not to show your pet's outgoing spell and ability damage the enemy is immune to.", Editbox="%n - Name of the attacked unit.\n%s - Name of the spell or ability."}},
- [38] = { Label="Pet Ability/Spell Evades", Tooltips={ShowCheckbox="Sets whether or not to show your pet's outgoing spell and ability evades.", Editbox="%n - Name of the attacked unit.\n%s - Name of the spell or ability."}},
+ [31]	= { Label="Pet Ability/Spell DoTs", Tooltips={ShowCheckbox="Sets whether or not to show your pet's outgoing spell and ability damage over time.", Editbox="%a - Amount of damage done.\n%n - Name of the attacked unit.\n%s - Name of the spell or ability.\n%t - Type of damage done."}},
+ [32]	= { Label="Pet Ability Misses", Tooltips={ShowCheckbox="Sets whether or not to show your pet's outgoing ability misses.", Editbox="%n - Name of the attacked unit.\n%s - Name of the ability."}},
+ [33]	= { Label="Pet Ability Dodges", Tooltips={ShowCheckbox="Sets whether or not to show your pet's outgoing ability dodges.", Editbox="%n - Name of the attacked unit.\n%s - Name of the ability."}},
+ [34]	= { Label="Pet Ability Parries", Tooltips={ShowCheckbox="Sets whether or not to show your pet's outgoing ability parries.", Editbox="%n - Name of the attacked unit.\n%s - Name of the ability."}},
+ [35]	= { Label="Pet Ability Blocks", Tooltips={ShowCheckbox="Sets whether or not to show your pet's outgoing ability blocks.", Editbox="%n - Name of the attacked unit.\n%s - Name of the ability."}},
+ [36] = { Label="Pet Spell Resists", Tooltips={ShowCheckbox="Sets whether or not to show your pet's outgoing spell resists.", Editbox="%n - Name of the attacked unit.\n%s - Name of the spell."}},
+ [37] = { Label="Pet Ability/Spell Absorbs", Tooltips={ShowCheckbox="Sets whether or not to show your pet's absorbed damage from outgoing spells and abilities.", Editbox="%n - Name of the attacked unit.\n%s - Name of the spell or ability."}},
+ [38] = { Label="Pet Ability/Spell Immunes", Tooltips={ShowCheckbox="Sets whether or not to show your pet's outgoing spell and ability damage the enemy is immune to.", Editbox="%n - Name of the attacked unit.\n%s - Name of the spell or ability."}},
+ [39] = { Label="Pet Ability/Spell Evades", Tooltips={ShowCheckbox="Sets whether or not to show your pet's outgoing spell and ability evades.", Editbox="%n - Name of the attacked unit.\n%s - Name of the spell or ability."}},
 };
 
 MikSBTOpt.NOTIFICATION_EVENTS = {
