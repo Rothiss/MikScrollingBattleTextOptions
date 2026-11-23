@@ -1,0 +1,66 @@
+name: Sync from upstream
+
+on:
+  schedule:
+    - cron: '0 * * * *'   # every hour
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install git-filter-repo
+        run: pip install --break-system-packages git-filter-repo
+
+      - name: Sync subdirectory from upstream
+        env:
+          UPSTREAM: https://github.com/brues-code/Vanilla_MikScrollingBattleText.git
+          PREFIX: MikScrollingBattleTextOptions
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+
+          # 1. Keep the mirror's own files (README + workflows) aside.
+          mkdir -p /tmp/mirror-config
+          cp -R README.md /tmp/mirror-config/ 2>/dev/null || true
+          cp -R .github /tmp/mirror-config/ 2>/dev/null || true
+
+          # 2. Filter the subdirectory out of a fresh upstream clone.
+          git clone --quiet "$UPSTREAM" /tmp/upstream
+          cd /tmp/upstream
+          git filter-repo --subdirectory-filter "$PREFIX" --force
+          cd -
+
+          # 3. Reset this repo to the freshly filtered upstream history.
+          git fetch /tmp/upstream master:refs/remotes/upstream/master
+          git checkout --detach refs/remotes/upstream/master
+
+          # 4. Restore the mirror's own files on top.
+          cp -R /tmp/mirror-config/README.md . 2>/dev/null || true
+          cp -R /tmp/mirror-config/.github . 2>/dev/null || true
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No local changes."
+          else
+            git commit -m "chore: mirror configuration"
+          fi
+
+          # 5. Point master at the result.
+          git branch -f master HEAD
+
+          # 6. Push only if something actually changed.
+          git fetch --quiet origin master
+          if git diff --quiet origin/master master; then
+            echo "Up to date; nothing to push."
+          else
+            git push --force origin master
+          fi
