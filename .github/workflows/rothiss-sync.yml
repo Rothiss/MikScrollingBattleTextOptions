@@ -1,4 +1,4 @@
-name: Sync from upstream
+name: Rothiss Sync
 
 on:
   schedule:
@@ -21,6 +21,7 @@ jobs:
         run: pip install --break-system-packages git-filter-repo
 
       - name: Sync subdirectory from upstream
+        id: sync
         env:
           UPSTREAM: https://github.com/brues-code/Vanilla_MikScrollingBattleText.git
           PREFIX: MikScrollingBattleTextOptions
@@ -61,6 +62,36 @@ jobs:
           git fetch --quiet origin master
           if git diff --quiet origin/master master; then
             echo "Up to date; nothing to push."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
           else
             git push --force origin master
+            echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
+
+      - name: Notify Discord
+        if: always() && (steps.sync.outputs.changed == 'true' || failure())
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: |
+          if [ -z "$DISCORD_WEBHOOK" ]; then
+            echo "DISCORD_WEBHOOK_URL secret not set; skipping Discord notification."
+            exit 0
+          fi
+          RUN_URL="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+          if [ "${{ job.status }}" = "success" ]; then
+            TITLE="✅ MikScrollingBattleTextOptions synced"
+            COLOR=3066993
+            DESC="New commits from \`brues-code/Vanilla_MikScrollingBattleText\` were merged into the fork."
+          else
+            TITLE="❌ MikScrollingBattleTextOptions sync failed"
+            COLOR=15158332
+            DESC="The scheduled sync failed. Check the run for details."
+          fi
+          curl -sS -o /dev/null -X POST "$DISCORD_WEBHOOK" \
+            -H "Content-Type: application/json" \
+            -d "$(jq -nc \
+                --arg title "$TITLE" \
+                --arg desc "$DESC" \
+                --arg url "$RUN_URL" \
+                --argjson color "$COLOR" \
+                '{embeds:[{title:$title, description:$desc, color:$color, url:$url}]}')"

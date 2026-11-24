@@ -4,7 +4,7 @@ Personal mirror of the MSBT options addon, split from
 [brues-code/Vanilla_MikScrollingBattleText](https://github.com/brues-code/Vanilla_MikScrollingBattleText).
 
 Auto-synced hourly from upstream via GitHub Actions
-([`.github/workflows/sync.yml`](.github/workflows/sync.yml)).
+([`.github/workflows/rothiss-sync.yml`](.github/workflows/rothiss-sync.yml)).
 
 ## Install
 
